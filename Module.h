@@ -23,25 +23,25 @@ public:
 	void show(sf::RenderTarget& target);
 
 	// Recevoir des dégats
-	void Recevoir_Degats(int degats);
+	void recevoirDegat(int degats);
 
 	// Recevoir Soin
-	void Recevoir_Soin(int soin);
+	void recevoirSoin(int soin);
 
 	// Retourne la position du curseur par rapport au bouton
 	bool eventMouse(int x, int y);
 
 protected:
 	// Corps
-	sf::RectangleShape Corps;
+	sf::RectangleShape corps;
 	// Barre de vie
-	sf::RectangleShape HP_bar;
+	sf::RectangleShape hpBar;
 
 	// Variable
-	int HP_size_x, HP_init_size_x;
-	int HP_size_y, HP_init_size_y;
-	int corps_position_x, corps_position_y;
-	int corps_size_x, corps_size_y;
+	int hpSizeX, hpInitSizeX;
+	int hpSizeY, hpInitSizeY;
+	int corpsPositionX, corpsPositionY;
+	int corpsSizeX, corpsSizeY;
 
 };
 

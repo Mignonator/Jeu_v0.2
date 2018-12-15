@@ -8,11 +8,11 @@ Basic::Basic()
 
 }
 
-Basic::Basic(int point_de_vie, string nom) :
-	point_de_vie(point_de_vie), nom(nom)
+Basic::Basic(int pointDeVie, string nom) :
+	pointDeVie(pointDeVie), nom(nom)
 {
-	point_de_vie_max = point_de_vie;
-	Force  = 0;
+	pointDeVieMax = pointDeVie;
+	force  = 0;
 	armure = 0;
 }
 
@@ -22,49 +22,50 @@ Basic::~Basic()
 }
 
 // Recevoir dégats
-void Basic::Recevoir_Degats(int degats)
+void Basic::recevoirDegat(int degat)
 {
-	point_de_vie -= degats;
+	pointDeVie -= degat;
 
 	// Warning
-	if (point_de_vie < 0)
-		point_de_vie = 0;
+	if (pointDeVie < 0)
+		pointDeVie = 0;
 
 	
 }
 
 // Recevoir des soins
-void Basic::Recevoir_Soin(int soin)
+void Basic::recevoirSoin(int soin)
 {
-	point_de_vie += soin;
+	pointDeVie += soin;
 
 	// Warning
-	if (point_de_vie > point_de_vie_max)
-		point_de_vie = point_de_vie_max;
+	if (pointDeVie > pointDeVieMax)
+		pointDeVie = pointDeVieMax;
 }
 
 // Faire du dégats
-void Basic::Infliger_Degats(Basic &cible)
+void Basic::infligerDegat(Basic &cible)
 {
 	// Affichage
-	cout << nom << " a inflige " << Force << " de degats a sa cible " << endl;
+	cout << nom << " a inflige " << force << " de degats a sa cible " << endl;
 
-	cible.Recevoir_Degats(Force);
+	cible.recevoirDegat(force);
 }
 
 // Est vivant ?
-bool Basic::Statut()
+bool Basic::statut()
 {
-	if (point_de_vie <= 0)
+
+	if (pointDeVie <= 0)
 		return false;
 	else
 		return true;
 }
 
 // Se Présenter
-void Basic::SePrésenter()
+void Basic::sePresenter()
 {
 	cout << "Bonjour, je suis " << nom << "." << endl;
-	cout << "J'ai encore " << point_de_vie << " points de vie." << endl;
-	cout << "J'ai " << Force << " de force." << endl;
+	cout << "J'ai encore " << pointDeVie << " points de vie." << endl;
+	cout << "J'ai " << force << " de force." << endl;
 }

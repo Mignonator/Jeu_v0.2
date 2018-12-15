@@ -16,7 +16,7 @@ public:
 	~Drone();
 
 	// Compétence de réparation
-	void Reparation(Module &cible);
+	void reparation(Module &cible);
 
 	// Compétence de Scan
 	

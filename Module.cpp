@@ -9,41 +9,41 @@ Module::Module()
 Module::Module(int point_de_vie, string nom) : Basic(point_de_vie, nom)
 {
 	// Variable
-	HP_size_x = 200; HP_init_size_x = HP_size_x;
-	HP_size_y = 10;  HP_init_size_y = HP_size_y;
+	hpSizeX = 200; hpInitSizeX = hpSizeX;
+	hpSizeY = 10;  hpInitSizeY = hpSizeY;
 	// Corps
-	Corps.setPosition(200, 200);
-	Corps.setSize(sf::Vector2f(200,200));
-	Corps.setFillColor(sf::Color::White);
-	Corps.setOutlineThickness(1.f);
-	Corps.setOutlineColor(sf::Color::Black);
+	corps.setPosition(200, 200);
+	corps.setSize(sf::Vector2f(200,200));
+	corps.setFillColor(sf::Color::White);
+	corps.setOutlineThickness(1.f);
+	corps.setOutlineColor(sf::Color::Black);
 	// Barre de vie
-	HP_bar.setPosition(200, 200-HP_size_y);
-	HP_bar.setSize(sf::Vector2f(HP_size_x, HP_size_y));
-	HP_bar.setFillColor(sf::Color::Green);
-	HP_bar.setOutlineThickness(1.f);
-	HP_bar.setOutlineColor(sf::Color::Black);
+	hpBar.setPosition(200, 200-hpSizeY);
+	hpBar.setSize(sf::Vector2f(hpSizeX, hpSizeY));
+	hpBar.setFillColor(sf::Color::Green);
+	hpBar.setOutlineThickness(1.f);
+	hpBar.setOutlineColor(sf::Color::Black);
 
 }
 
 Module::Module(int point_de_vie, string nom, int corps_position_x, int corps_position_y, int corps_size_x, int corps_size_y) : 
-	Basic(point_de_vie, nom), corps_position_x(corps_position_x), corps_position_y(corps_position_y), corps_size_x(corps_size_x), corps_size_y(corps_size_y)
+	Basic(point_de_vie, nom), corpsPositionX(corps_position_x), corpsPositionY(corps_position_y), corpsSizeX(corps_size_x), corpsSizeY(corps_size_y)
 {
 	// Variable
-	HP_size_x = corps_size_x; HP_init_size_x = HP_size_x;
-	HP_size_y = 10;           HP_init_size_y = HP_size_y;
+	hpSizeX = corps_size_x; hpInitSizeX = hpSizeX;
+	hpSizeY = 10;           hpInitSizeY = hpSizeY;
 	// Corps
-	Corps.setPosition(corps_position_x, corps_position_y);
-	Corps.setSize(sf::Vector2f(corps_size_x, corps_size_y));
-	Corps.setFillColor(sf::Color::White);
-	Corps.setOutlineThickness(1.f);
-	Corps.setOutlineColor(sf::Color::Black);
+	corps.setPosition(corps_position_x, corps_position_y);
+	corps.setSize(sf::Vector2f(corps_size_x, corps_size_y));
+	corps.setFillColor(sf::Color::White);
+	corps.setOutlineThickness(1.f);
+	corps.setOutlineColor(sf::Color::Black);
 	// Barre de vie
-	HP_bar.setPosition(corps_position_x, corps_position_y - HP_size_y);
-	HP_bar.setSize(sf::Vector2f(HP_size_x, HP_size_y));
-	HP_bar.setFillColor(sf::Color::Green);
-	HP_bar.setOutlineThickness(1.f);
-	HP_bar.setOutlineColor(sf::Color::Black);
+	hpBar.setPosition(corps_position_x, corps_position_y - hpSizeY);
+	hpBar.setSize(sf::Vector2f(hpSizeX, hpSizeY));
+	hpBar.setFillColor(sf::Color::Green);
+	hpBar.setOutlineThickness(1.f);
+	hpBar.setOutlineColor(sf::Color::Black);
 }
 
 
@@ -54,60 +54,60 @@ Module::~Module()
 // Affichage de la forme
 void Module::show(sf::RenderTarget& target)
 {
-	target.draw(Corps);
-	target.draw(HP_bar);
+	target.draw(corps);
+	target.draw(hpBar);
 }
 
 // Recevoir des dégats
-void Module::Recevoir_Degats(int degats)
+void Module::recevoirDegat(int degats)
 {
 	// On perds de la vie -- Fonction de base
-	Basic::Recevoir_Degats(degats);
+	Basic::recevoirDegat(degats);
 
 	// On modifie la barre de vie -- Spécialisation
-	HP_size_x = HP_init_size_x * point_de_vie / point_de_vie_max;
-	HP_bar.setSize(sf::Vector2f(HP_size_x, HP_size_y));
+	hpSizeX = hpInitSizeX * pointDeVie / pointDeVieMax;
+	hpBar.setSize(sf::Vector2f(hpSizeX, hpSizeY));
 
 	// Mise à jour de la couleur
-	int ratio = 100 * point_de_vie / point_de_vie_max;
+	int ratio = 100 * pointDeVie / pointDeVieMax;
 	if (ratio >= 60)
 	{
-		HP_bar.setFillColor(sf::Color::Green);
+		hpBar.setFillColor(sf::Color::Green);
 	}
 	else if (ratio <= 30)
 	{
-		HP_bar.setFillColor(sf::Color::Red);
+		hpBar.setFillColor(sf::Color::Red);
 	}
 	else
 	{
-		HP_bar.setFillColor(sf::Color::Yellow);
+		hpBar.setFillColor(sf::Color::Yellow);
 	}
 
 }
 
 // Recevoir Soin
-void Module::Recevoir_Soin(int soin)
+void Module::recevoirSoin(int soin)
 {
 	// Fonction de base
-	Basic::Recevoir_Soin(soin);
+	Basic::recevoirSoin(soin);
 
 	// On modifie la barre de vie -- Spécialisation
-	HP_size_x = HP_init_size_x * point_de_vie / point_de_vie_max;
-	HP_bar.setSize(sf::Vector2f(HP_size_x, HP_size_y));
+	hpSizeX = hpInitSizeX * pointDeVie / pointDeVieMax;
+	hpBar.setSize(sf::Vector2f(hpSizeX, hpSizeY));
 
 	// Mise à jour de la couleur
-	int ratio = 100 * point_de_vie / point_de_vie_max;
+	int ratio = 100 * pointDeVie / pointDeVieMax;
 	if (ratio >= 60)
 	{
-		HP_bar.setFillColor(sf::Color::Green);
+		hpBar.setFillColor(sf::Color::Green);
 	}
 	else if (ratio <= 30)
 	{
-		HP_bar.setFillColor(sf::Color::Red);
+		hpBar.setFillColor(sf::Color::Red);
 	}
 	else
 	{
-		HP_bar.setFillColor(sf::Color::Yellow);
+		hpBar.setFillColor(sf::Color::Yellow);
 	}
 }
 
@@ -115,7 +115,7 @@ void Module::Recevoir_Soin(int soin)
 bool Module::eventMouse(int x, int y)
 {
 	sf::Vector2f point(x, y);
-	sf::FloatRect boundingBox = Corps.getGlobalBounds();
+	sf::FloatRect boundingBox = corps.getGlobalBounds();
 
 	return boundingBox.contains(point);
 }
