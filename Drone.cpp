@@ -19,7 +19,7 @@ Drone::~Drone()
 }
 
 // Compétence Réparation
-void Drone::Reparation(Module &cible)
+void Drone::reparation(Module &cible)
 {
-	cible.Recevoir_Soin(soin);
+	cible.recevoirSoin(soin);
 }

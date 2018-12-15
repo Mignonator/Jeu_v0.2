@@ -11,7 +11,7 @@ class Golem :
 {
 public:
 	// Constructeur
-	Golem(int point_de_vie, string nom);
+	Golem(int pointDeVie, string nom);
 	// Deconstructeur
 	~Golem();
 
@@ -19,17 +19,17 @@ public:
 	void show(sf::RenderTarget& target);
 
 	// Infliger des dégats
-	void Infliger_Degats(Module &cible);
+	void infligerDegat(Module &cible);
 
 protected:
 	// Corps
-	sf::RectangleShape Corps;
+	sf::RectangleShape corps;
 	// Barre de vie
-	sf::RectangleShape HP_bar;
+	sf::RectangleShape hpBar;
 
 	// Variable
-	int HP_size_x;
-	int HP_size_y;
+	int hpSizeX;
+	int hpSizeY;
 };
 
 #endif // !DEF_GOLEM

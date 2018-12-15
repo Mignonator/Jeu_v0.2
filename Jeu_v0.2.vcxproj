@@ -158,14 +158,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Basic.h" />
+    <ClInclude Include="Bouton.h" />
     <ClInclude Include="Drone.h" />
+    <ClInclude Include="Fraise.h" />
     <ClInclude Include="Golem.h" />
     <ClInclude Include="Module.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Basic.cpp" />
+    <ClCompile Include="Bouton.cpp" />
     <ClCompile Include="Drone.cpp" />
+    <ClCompile Include="Fraise.cpp" />
     <ClCompile Include="Golem.cpp" />
     <ClCompile Include="Jeu_v0.2.cpp" />
     <ClCompile Include="Module.cpp" />

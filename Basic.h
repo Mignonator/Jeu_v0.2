@@ -17,25 +17,25 @@ public:
 	~Basic();
 
 	// Recevoir des dégats
-	void Recevoir_Degats(int degats);
+	void recevoirDegat(int degats);
 
 	// Recevoir des soins
-	void Recevoir_Soin(int soin);
+	void recevoirSoin(int soin);
 
 	// Faire du dégats
-	void Infliger_Degats(Basic &cible);
+	void infligerDegat(Basic &cible);
 
 	// Se présenter
-	void SePrésenter();
+	void sePresenter();
 
 	// Est vivant ?
-	bool Statut();
+	bool statut();
 
 protected:
-	int point_de_vie;
-	int point_de_vie_max;
+	int pointDeVie;
+	int pointDeVieMax;
 	int armure;
-	int Force;
+	int force;
 	string nom;
 
 };
