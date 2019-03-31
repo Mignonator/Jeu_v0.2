@@ -23,7 +23,7 @@ public:
 	void show(sf::RenderTarget& target);
 
 	// Recevoir des dégats
-	void recevoirDegat(int degats);
+	void recevoirDegat(int degats, sf::Time temps);
 
 	// Recevoir Soin
 	void recevoirSoin(int soin);

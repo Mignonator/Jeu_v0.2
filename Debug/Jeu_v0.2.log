@@ -1,2 +1,67 @@
-﻿  Basic.cpp
-  Jeu_v0.2.vcxproj -> C:\Users\Etienne\Documents\Etienne\Projet Jeu\Jeu_v0.2\Debug\Jeu_v0.2.exe
+﻿  DroneDExploration.cpp
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\dronedexploration.cpp(35): error C2027: utilisation du type non défini 'Environnement'
+  c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\dronedexploration.h(4): note: voir la déclaration de 'Environnement'
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\dronedexploration.cpp(50): error C2664: 'void DroneDExploration::gainDExperience(sf::Time,Environnement)' : impossible de convertir l'argument 2 de 'Environnement' en 'Environnement'
+  c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\dronedexploration.cpp(50): note: utilisation du type non défini 'Environnement'
+  c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\dronedexploration.h(4): note: voir la déclaration de 'Environnement'
+  Environnement.cpp
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\environnement.cpp(42): warning C4244: 'initialisation' : conversion de 'sf::Int32' en 'float', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\environnement.cpp(60): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+  Golem.cpp
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\golem.cpp(6): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\golem.cpp(25): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\golem.cpp(59): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+  Jeu_v0.2.cpp
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\jeu_v0.2.cpp(329): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\jeu_v0.2.cpp(331): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\jeu_v0.2.cpp(354): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\jeu_v0.2.cpp(356): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\jeu_v0.2.cpp(376): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\jeu_v0.2.cpp(378): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+  Vaisseau.cpp
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(10): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(30): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(39): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(40): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(50): warning C4244: 'argument' : conversion de 'T' en 'int', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(66): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(72): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(73): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(81): error C2065: 'droneDexploration' : identificateur non déclaré
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(81): error C2541: 'delete' : impossible de détruire des objets qui ne sont pas des pointeurs
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(113): warning C4244: 'initialisation' : conversion de 'sf::Int32' en 'float', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(126): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(155): warning C4244: 'initialisation' : conversion de 'sf::Int32' en 'float', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(168): warning C4244: 'initialisation' : conversion de 'float' en 'int', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(186): warning C4244: 'argument' : conversion de 'int' en 'T', perte possible de données
+          with
+          [
+              T=float
+          ]
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(204): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+c:\users\etienne\documents\etienne\projet jeu\jeu_v0.2\jeu_v0.2\vaisseau.cpp(210): warning C4244: 'return' : conversion de 'int' en 'float', perte possible de données
+  Génération de code en cours...

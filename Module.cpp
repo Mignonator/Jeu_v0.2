@@ -59,10 +59,12 @@ void Module::show(sf::RenderTarget& target)
 }
 
 // Recevoir des dégats
-void Module::recevoirDegat(int degats)
+void Module::recevoirDegat(int degats, sf::Time temps)
 {
-	// On perds de la vie -- Fonction de base
-	Basic::recevoirDegat(degats);
+	// Les points de vie sont mis à jour
+	// Conversion du temps en int
+	int varTemps = temps.asSeconds();
+	pointDeVie = pointDeVieMax - degats * varTemps;
 
 	// On modifie la barre de vie -- Spécialisation
 	hpSizeX = hpInitSizeX * pointDeVie / pointDeVieMax;
@@ -89,7 +91,13 @@ void Module::recevoirDegat(int degats)
 void Module::recevoirSoin(int soin)
 {
 	// Fonction de base
-	Basic::recevoirSoin(soin);
+	//Basic::recevoirSoin(soin);
+
+	this->sePresenter();
+
+	pointDeVie += soin;
+
+	this->sePresenter();
 
 	// On modifie la barre de vie -- Spécialisation
 	hpSizeX = hpInitSizeX * pointDeVie / pointDeVieMax;

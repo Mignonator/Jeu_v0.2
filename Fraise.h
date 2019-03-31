@@ -7,29 +7,55 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-class Fraise :
-	public Module
+class Fraise
 {
 public:
 	// Constructeur
 	Fraise();
-	Fraise(int point_de_vie, string nom);
-	Fraise(int point_de_vie, string nom, int corps_position_x, int corps_position_y, int corps_size_x, int corps_size_y);
+	Fraise(float point_de_vie, string nom);
 	// Destructeur
 	~Fraise();
 
 	// Gain de ressource
-	void forage();
+	void forage(sf::Time temps);
 
 	// Retourne les ressources
-	int getRessource();
+	double getRessource();
 
 	// Retire les ressources utilisées pour les améliorations
 	bool consommation(int montant);
 
+	// Perte d'énergie
+	void perteDEnergie(sf::Time temps);
+
+	// Gain d'énergie
+	void gainDEnergie(int gain);
+
+	// Recevoir Soin
+	void recevoirSoin(int soin);
+	// Retourne la position du curseur par rapport au bouton
+	bool eventMouse(int x, int y);
+	// Affichage de la forme
+	void show(sf::RenderTarget& target);
+
 protected:
+	// Texture
+	sf::Texture texture;
+	// Sprite
+	sf::Sprite sprite;
+	// Barre d'energie
+	sf::RectangleShape nrjBar;
+	// Variable
+	float pointDeVie;
+	float pointDeVieMax;
+	string nom;
+	int nrjSizeX, nrjInitSizeX;
+	int nrjSizeY, nrjInitSizeY;
+	int corpsPositionX, corpsPositionY;
+	int corpsSizeX, corpsSizeY;
 	// Ressource
-	int ressource;
+	double ressource;
+	int coeur;
 };
 
 #endif // !DEF_FRAISE

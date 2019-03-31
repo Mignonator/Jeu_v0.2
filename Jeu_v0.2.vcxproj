@@ -160,15 +160,23 @@
     <ClInclude Include="Basic.h" />
     <ClInclude Include="Bouton.h" />
     <ClInclude Include="Drone.h" />
+    <ClInclude Include="DroneDeReparation.h" />
+    <ClInclude Include="DroneDExploration.h" />
+    <ClInclude Include="Environnement.h" />
     <ClInclude Include="Fraise.h" />
     <ClInclude Include="Golem.h" />
     <ClInclude Include="Module.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Planete.h" />
+    <ClInclude Include="Vaisseau.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Basic.cpp" />
     <ClCompile Include="Bouton.cpp" />
     <ClCompile Include="Drone.cpp" />
+    <ClCompile Include="DroneDeReparation.cpp" />
+    <ClCompile Include="DroneDExploration.cpp" />
+    <ClCompile Include="Environnement.cpp" />
     <ClCompile Include="Fraise.cpp" />
     <ClCompile Include="Golem.cpp" />
     <ClCompile Include="Jeu_v0.2.cpp" />
@@ -179,6 +187,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Planete.cpp" />
+    <ClCompile Include="Vaisseau.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
