@@ -7,7 +7,7 @@ Vaisseau::Vaisseau()
 }
 
 Vaisseau::Vaisseau(int point_de_vie, string nom) :
-	pointDeVie(point_de_vie), pointDeVieMax(point_de_vie), nom(nom), droneExplorateur(100,"Explorateur",true,400,400)
+	pointDeVie(point_de_vie), pointDeVieMax(point_de_vie), nom(nom)
 {
 	// Variable
 	corpsPositionX = 200;
@@ -49,7 +49,7 @@ Vaisseau::Vaisseau(int point_de_vie, string nom) :
 	droneDeReparation.setActive(true);
 	droneDeReparation.setPosition(position.x, position.y);
 	// D'exploration
-	//droneExplorateur = new DroneDExploration(100,"Explorateur",true,corpsPositionX,300);
+	droneExplorateur = new DroneDExploration(100,"Explorateur",true,corpsPositionX,300);
 	// Bouton
 	droneDeReparation.setBoutonPosition(350, 350);
 	droneDeReparation.setBoutonMess("drone de reparation");
@@ -78,7 +78,9 @@ Vaisseau::Vaisseau(int point_de_vie, string nom, int corps_position_x, int corps
 
 Vaisseau::~Vaisseau()
 {
-	delete droneDexploration;
+	//delete droneExplorateur;
+	//delete boutonCliqueDeSoin;
+	//delete boutonDeStructure;
 }
 
 // Affichage de la forme
@@ -103,6 +105,8 @@ void Vaisseau::show(sf::RenderTarget& target, bool isJournee)
 	//// Drone
 	// Drone de reparation
 	droneDeReparation.show(target, isJournee);
+	// Drone explorateur
+	droneExplorateur->show(target, distance);
 }
 
 // Recevoir des dégats
@@ -230,4 +234,16 @@ float Vaisseau::getHP()
 float Vaisseau::getMaxHP()
 {
 	return pointDeVieMax;
+}
+
+// Recevoir expérience
+void Vaisseau::getExperience(float distance)
+{
+
+}
+
+// Retourne la distance
+float Vaisseau::getDistance()
+{
+	return distance;
 }

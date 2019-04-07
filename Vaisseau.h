@@ -44,12 +44,16 @@ public:
 	float getHP();
 	// Retourne les HP Max
 	float getMaxHP();
+	// recevoir expérience
+	void getExperience(float distance);
+	// Get distance
+	float getDistance();
 
 	//// Drone
 	// De reparation
 	DroneDeReparation droneDeReparation;
 	// D'exploration
-	DroneDExploration droneExplorateur;
+	DroneDExploration *droneExplorateur;
 	//// Bouton
 	// Structure
 	Bouton *boutonDeStructure;
@@ -77,6 +81,7 @@ protected:
 	int force;
 	float vitesse;
 
+	float distance;
 	
 };
 
